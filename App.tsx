@@ -11,7 +11,7 @@ import {
   Button,Alert,View, Modal, Pressable, SectionList,StatusBar, 
   StatusBarStyle, Platform, Switch, TouchableOpacity, KeyboardAvoidingView,
   TouchableWithoutFeedback, Keyboard,
-  ScrollView
+  ScrollView, ImageBackground
 } from 'react-native';
 import Header from './src/components/Header'
 import TextInputComponent from './src/components/TextInputComponent';
@@ -87,6 +87,10 @@ function App(): React.JSX.Element {
   
 
   return (
+    <ImageBackground
+      source={require('./assets/reactNativeBackgroundPic.jpg')} // Replace with your image path
+      style={styles.background}
+    >
     <SafeAreaView style={styles.backgroundStyle}>
       <Header title={'Home'} 
       style={{backgroundColor: 'grey'}}
@@ -189,12 +193,17 @@ function App(): React.JSX.Element {
         </View>
         </ScrollView>
     </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 
 const styles = StyleSheet.create({
-  
+  background: {
+    flex: 1,
+    resizeMode: 'cover', // Ensure the image covers the entire background
+    
+  },
   buttonsContainer: {
     padding: 10,
   },
