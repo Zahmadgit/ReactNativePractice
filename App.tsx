@@ -10,11 +10,13 @@ import {
   SafeAreaView,StyleSheet,Text,Image,ActivityIndicator,
   Button,Alert,View, Modal, Pressable, SectionList,StatusBar, 
   StatusBarStyle, Platform, Switch, TouchableOpacity, KeyboardAvoidingView,
-  TouchableWithoutFeedback, Keyboard
+  TouchableWithoutFeedback, Keyboard,
+  ScrollView
 } from 'react-native';
 import Header from './src/components/Header'
 import TextInputComponent from './src/components/TextInputComponent';
 import ImageResizer from './src/components/ImageResizer';
+import AdditionComponent from './src/components/AdditionComponent';
 
 const STYLES = ['default', 'dark-content', 'light-content'] as const;
 const TRANSITIONS = ['fade', 'slide', 'none'] as const;
@@ -91,13 +93,16 @@ function App(): React.JSX.Element {
       textStyle={{color:'white'}}
       />
 
-
+      <ScrollView>
+      <AdditionComponent/>
 
       
       <TextInputComponent/>
 
       
       <ImageResizer/>
+
+      
       
       <Switch
           trackColor={{false: '#767577', true: '#81b0ff'}}
@@ -182,6 +187,7 @@ function App(): React.JSX.Element {
             />
           ) : null}
         </View>
+        </ScrollView>
     </SafeAreaView>
   );
 }
