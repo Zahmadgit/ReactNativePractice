@@ -4,8 +4,9 @@ import { TextInput, StyleSheet, View} from "react-native";
 
 const TextInputComponent = (props) =>{
     const [text, onChangeText] = React.useState(props.defaultValue || 'Text Input');
+    
     return(
-        <View>
+        <View style={{...styles.textInput}}>
                 <TextInput
                     editable
                     multiline
@@ -22,7 +23,7 @@ const TextInputComponent = (props) =>{
 }
 const styles=StyleSheet.create({
     textInput:{
-        padding: 10,
+        padding: 20,
         backgroundColor: 'yellow',
         fontSize: 20
         
