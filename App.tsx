@@ -14,23 +14,26 @@ import {
   ActivityIndicator,
   Button,
   Alert,
-  View
+  View,
 } from 'react-native';
 import Header from './src/components/Header'
-
-
-
+import TextInputComponent from './src/components/TextInputComponent';
 
 function App(): React.JSX.Element {
   
-  const [value, setValue] = useState(100)
+  const [value, setValue] = useState(200)
+  const [imageSize, setImageSize] = useState(200)
 
-
-  let i = 0;
+  
   const onButtonPressed=()=>{
-    setValue(value + 1)
+    setValue(value+20)
+    setImageSize(imageSize + 20)
   }
   
+  const onButtonPressed2=()=>{
+    setValue(value-20)
+    setImageSize(imageSize -20)
+  }
 
   return (
     <SafeAreaView style={styles.backgroundStyle}>
@@ -39,16 +42,21 @@ function App(): React.JSX.Element {
       textStyle={{color:'white'}}
       />
 
-      <Text style={styles.text}>Value of {value}</Text>
+
+      
+      <TextInputComponent/>
+      <Text style={styles.text}>Size of Image: {value}</Text>
+      
       <Image
       source={{
         uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
       }}
-        style={{width: 200, height:200}}
+        style={{width: imageSize, height:imageSize}}
       />
+      
 
-      <ActivityIndicator animating={true}size={10}/>
-      <Button title='Press me' onPress={onButtonPressed} />
+      <Button title='Press me to make image bigger' onPress={onButtonPressed} />
+      <Button title='Press me to make image smaller' onPress={onButtonPressed2} />
     </SafeAreaView>
   );
 }
@@ -59,7 +67,11 @@ const styles = StyleSheet.create({
   }, text:{
     fontWeight:'bold',
     fontSize:18
-  }
+  }, backgroundColor:{
+    backgroundColor: 'blue',
+    height:100,
+    width:100
+  },
 });
 
 export default App;
