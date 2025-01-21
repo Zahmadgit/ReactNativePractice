@@ -16,6 +16,7 @@ import {
 
 import Login from './src/components/Login';
 import WelcomeBack from './src/components/WelcomeBack';
+import CreateAccount from './src/components/CreateAccount';
 
 function App(): React.JSX.Element {
   
@@ -24,8 +25,9 @@ function App(): React.JSX.Element {
     
     <SafeAreaView>
       {/*<Login></Login>*/}
-      <WelcomeBack></WelcomeBack>
       
+      {/*<WelcomeBack></WelcomeBack>*/}
+      <CreateAccount></CreateAccount>
     </SafeAreaView>
     
     
