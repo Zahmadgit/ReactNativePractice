@@ -1,10 +1,18 @@
-import React from "react";
+import React, {Component} from "react";
 import { TextInput, StyleSheet, View} from "react-native";
 
-
-const TextInputComponent = (props) =>{
-    const [text, onChangeText] = React.useState(props.defaultValue || 'Text Input');
+class TextInputComponent extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            text: props.defaultValue || 'Text Input'
+        };
+    }
     
+    handleChangeText = (newText) => {
+        this.setState({text: newText})
+    }
+    render(){
     return(
         <View style={{...styles.textInput}}>
                 <TextInput
@@ -12,12 +20,13 @@ const TextInputComponent = (props) =>{
                     multiline
                     numberOfLines={4}
                     style={styles.textInput}
-                    onChangeText ={onChangeText}
-                    value={text}
+                    onChangeText ={this.handleChangeText}
+                    value={this.state.text}
             
                 />
         </View>
     )
+}
 
     
 }
