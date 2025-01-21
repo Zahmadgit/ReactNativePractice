@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import Login from './src/components/Login';
+import WelcomeBack from './src/components/WelcomeBack';
 
 function App(): React.JSX.Element {
   
@@ -22,8 +23,11 @@ function App(): React.JSX.Element {
   return (
     
     <SafeAreaView>
-      <Login></Login>
+      {/*<Login></Login>*/}
+      <WelcomeBack></WelcomeBack>
+      
     </SafeAreaView>
+    
     
   );
 }
