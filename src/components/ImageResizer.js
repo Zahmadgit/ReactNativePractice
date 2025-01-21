@@ -1,23 +1,33 @@
-import React, {useState} from "react";
+import React, {Component} from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, Button } from "react-native";
 
 
-const ImageResizer = () =>{
+class ImageResizer extends Component{
+  constructor(props) { 
+    super(props);
+      this.state = {
+        value: 200,
+        imageSize: 200,
+    };
+  };
 
-    const [value, setValue] = useState(200)
-    const [imageSize, setImageSize] = useState(200)
+  onButtonPressed = () =>{
+    this.setState((prevState) => ({
+      value: prevState.value +20,
+      imageSize: prevState.imageSize +20
+    }));
+  };
 
-    const onButtonPressed=()=>{
-        setValue(value+20)
-        setImageSize(imageSize + 20)
-      }
-      
-    const onButtonPressed2=()=>{
-        setValue(value-20)
-        setImageSize(imageSize -20)
-    }
+  onButtonPressed2 = ()=>{
+    this.setState((prevState)=>({
+      value:prevState.value -20,
+      imageSize:prevState.imageSize -20
+    }));
+  };
 
-   
+    render(){
+
+      const {value, imageSize} = this.state;
     
     return(
         <View>
@@ -30,14 +40,15 @@ const ImageResizer = () =>{
                         style={{width: imageSize, height:imageSize}}
                       />
                       
-                      <TouchableOpacity style={styles.button} onPress={onButtonPressed}>
+                      <TouchableOpacity style={styles.button} onPress={this.onButtonPressed}>
                           <Text>Press me to make Image Bigger</Text>
                         </TouchableOpacity>
-                      <Button title='Press me to make image smaller' onPress={onButtonPressed2} />
+                      <Button title='Press me to make image smaller' onPress={this.onButtonPressed2} />
         </View>
     )
 
     
+}
 }
 const styles=StyleSheet.create({
     text:{
