@@ -5,11 +5,16 @@ import LinearGradient from 'react-native-linear-gradient'
 
 
 const WelcomeBack =props =>{
+
     const[text, setText] = useState('')
     const navigation = useNavigation();
     const onLoginPressed =()=>{
         navigation.navigate('Login');
     }
+    const onSignUpPressed =()=>{
+        navigation.navigate('AsynStorageExample');
+    }
+    
 
     return (
         <LinearGradient
@@ -23,7 +28,9 @@ const WelcomeBack =props =>{
             source={require('../../assets/barbell.png')} // Path to your image
             style={styles.checkmark}
         />
+        
         <Text style={styles.headerText}>FITNESS CLUB</Text>
+                    
         <Text style={styles.headerText2}>Welcome Back</Text>
             
                        
@@ -37,9 +44,10 @@ const WelcomeBack =props =>{
                             <Text style={styles.signIn}>SIGN IN</Text>
                         </LinearGradient>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button2}>
+                    <TouchableOpacity style={styles.button2}onPress={onSignUpPressed}>
                         <Text style={styles.signIn2}>SIGN UP</Text>
                     </TouchableOpacity>
+                   
                     
                     <Text style={styles.login}>Login with Social Media</Text>
                     
@@ -65,6 +73,12 @@ const WelcomeBack =props =>{
 }
 
 const styles = StyleSheet.create({
+    result: {
+        marginTop: 20,
+        fontSize: 18,
+        textAlign: 'center',
+      },
+
     imageRow: {
         flexDirection: 'row', 
         justifyContent: 'space-evenly', 
@@ -208,9 +222,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
       textInput: {
-        flex: 1, // TextInput takes up remaining space
-        padding: -10,
-        fontSize: 16,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        marginBottom: 20,
+        borderRadius: 5,
       },
       checkmark: {
         alignSelf:'center',

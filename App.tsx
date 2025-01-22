@@ -17,16 +17,19 @@ import {
 import Login from './src/components/Login';
 import WelcomeBack from './src/components/WelcomeBack';
 import CreateAccount from './src/components/CreateAccount';
+import AsynStorageExample from './src/screens/AsynStorageExample';
 
 import { createStaticNavigation, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 function App(): React.JSX.Element {
   const RootStack = createNativeStackNavigator({
     screens:{
       WelcomeBack: WelcomeBack,
       Login: Login,
-      CreateAccount: CreateAccount
+      CreateAccount: CreateAccount,
+      AsynStorageExample: AsynStorageExample
     }
   })
 

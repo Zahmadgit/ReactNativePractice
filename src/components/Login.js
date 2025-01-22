@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {View, StyleSheet, Text, TextInput, Image, Button, Pressable } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import EmailTextInput from '../screens/EmailTextInput'
@@ -6,12 +6,16 @@ import PasswordComponent from '../screens/PasswordComponent'
 import SignButton from '../screens/SignButton'
 import { useNavigation } from '@react-navigation/native'
 
+
 const Login =props =>{
     const[text, setText] = useState('')
+    
     const navigation = useNavigation();
     const onLoginPressed =()=>{
         navigation.navigate('CreateAccount');
     }
+
+    
     return (
         <LinearGradient
         colors={['#bc1434', '#431c3c']} 
@@ -27,10 +31,10 @@ const Login =props =>{
             <Text style={styles.forgot}>Forgot password?</Text>
                     <SignButton title={'SIGN IN'}></SignButton>
                     <Text style={styles.dont}>Don't have account?</Text>
-                    <Pressable onPress={onLoginPressed}>
+                    <Pressable onPress={onLoginPressed} >
                     <Text style={styles.signup}>Sign up</Text>
                     </Pressable>
-                  
+                
             </View> 
             
             
