@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
 import {View, StyleSheet, Text, TextInput, Image, Button, Pressable, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
@@ -5,6 +6,10 @@ import LinearGradient from 'react-native-linear-gradient'
 
 const WelcomeBack =props =>{
     const[text, setText] = useState('')
+    const navigation = useNavigation();
+    const onLoginPressed =()=>{
+        navigation.navigate('Login');
+    }
 
     return (
         <LinearGradient
@@ -22,7 +27,7 @@ const WelcomeBack =props =>{
         <Text style={styles.headerText2}>Welcome Back</Text>
             
                        
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={onLoginPressed}>
                         <LinearGradient
                             colors={['#bc1434', '#431c3c']}  // Gradient colors from purple to pink
                             style = {styles.gradient2}

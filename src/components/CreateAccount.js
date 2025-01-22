@@ -38,6 +38,19 @@ const CreateAccount =props =>{
 }
 
 const styles = StyleSheet.create({
+    
+    headerText: {
+        color: '#fff',
+        fontSize: 26,
+        fontWeight: 'bold',
+        padding: '10%',
+    },
+    container: {
+        height: '85%',
+        backgroundColor: 'white',
+        borderTopLeftRadius: 45,
+        borderTopRightRadius: 45
+    },
     signup:{
         
         textAlign: 'right',

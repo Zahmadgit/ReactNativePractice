@@ -18,17 +18,24 @@ import Login from './src/components/Login';
 import WelcomeBack from './src/components/WelcomeBack';
 import CreateAccount from './src/components/CreateAccount';
 
-function App(): React.JSX.Element {
-  
+import { createStaticNavigation, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+function App(): React.JSX.Element {
+  const RootStack = createNativeStackNavigator({
+    screens:{
+      WelcomeBack: WelcomeBack,
+      Login: Login,
+      CreateAccount: CreateAccount
+    }
+  })
+
+  const Navigation = createStaticNavigation(RootStack);
   return (
     
-    <SafeAreaView>
-      {/*<Login></Login>*/}
-      
-      <WelcomeBack></WelcomeBack>
-      {/*<CreateAccount></CreateAccount>*/}
-    </SafeAreaView>
+    <Navigation>
+    
+    </Navigation>
     
     
   );
