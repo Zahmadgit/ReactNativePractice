@@ -26,8 +26,8 @@ function App(): React.JSX.Element {
     <SafeAreaView>
       {/*<Login></Login>*/}
       
-      {/*<WelcomeBack></WelcomeBack>*/}
-      <CreateAccount></CreateAccount>
+      <WelcomeBack></WelcomeBack>
+      {/*<CreateAccount></CreateAccount>*/}
     </SafeAreaView>
     
     
