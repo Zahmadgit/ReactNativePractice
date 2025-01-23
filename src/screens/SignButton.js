@@ -2,14 +2,22 @@ import React, { useState } from 'react'
 import {View, StyleSheet, Text, TextInput, Image, Button, Pressable } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { ScreenStackHeaderRightView } from 'react-native-screens'
+import { useNavigation } from '@react-navigation/native'
+
 
 const SignButton = (props) =>{
     const [text, setText] = useState('')
     const {title, style, textStyle, propText} = props
+     const navigation = useNavigation();
+     const onLoginPressed =()=>{
+        navigation.navigate('Tabs');
+    }
 
     return(
         <View>
-        <Pressable style={{...styles.button,...style}}>
+        <Pressable style={{...styles.button,...style}} 
+        onPress={onLoginPressed}>
+            
                                 <LinearGradient
                                     colors={['#bc1434', '#431c3c']}  // Gradient colors from purple to pink
                                     style = {styles.button}

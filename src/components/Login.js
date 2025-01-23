@@ -11,7 +11,7 @@ const Login =props =>{
     const[text, setText] = useState('')
     
     const navigation = useNavigation();
-    const onLoginPressed =()=>{
+    const onSignUpPressed =()=>{
         navigation.navigate('CreateAccount');
     }
 
@@ -31,7 +31,7 @@ const Login =props =>{
             <Text style={styles.forgot}>Forgot password?</Text>
                     <SignButton title={'SIGN IN'}></SignButton>
                     <Text style={styles.dont}>Don't have account?</Text>
-                    <Pressable onPress={onLoginPressed} >
+                    <Pressable onPress={onSignUpPressed} >
                     <Text style={styles.signup}>Sign up</Text>
                     </Pressable>
                 
