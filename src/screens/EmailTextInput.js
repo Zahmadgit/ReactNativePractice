@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {View, StyleSheet, Text, TextInput, Image, Button, Pressable } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
+
 const EmailTextInput = (props) =>{
     const [text, setText] = useState('')
     const {title, style, textStyle, propText} = props

@@ -59,6 +59,7 @@ const WelcomeBack =props =>{
                         <Image
                             source={require('../../assets/twitter.png')}
                             style={styles.image}
+                            
                         />
                         <Image
                             source={require('../../assets/facebook.webp')}
@@ -89,7 +90,8 @@ const styles = StyleSheet.create({
         width: 40, 
         height: 40, 
         resizeMode: 'cover',
-        marginHorizontal: -100
+        marginHorizontal: -100,
+        tintColor: 'white'
     },
     signup:{
         
